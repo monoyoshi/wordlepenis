@@ -1,3 +1,21 @@
+/* color variables */
+
+:root {
+    --border: #878a8c;
+    --gray: #787c7e;
+    --yellow: #c9b458;
+    --green: #6aaa64;
+}
+
+@property --color {
+    syntax: "--gray | --yellow | --green";
+    inherits: false;
+}
+
+/* - - - - - - - - - */
+
+/* overall structure */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,41 +32,96 @@ html, body {
     font-style: normal;
 }
 
+/* - - - - - - - - - */
+
+/* article */
 article {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: 100%;
-    font-size: 32px;
     background-color: #ffffff;
     
-    > div {
+    /* wordle mimic */
+    > figure {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 62px;
-        height: 62px;
-        background-color: #787c7e;
-        color: #ffffff;
-        user-select: none;
 
-        &:not(:last-child) {
-            margin-right: 5px;
+        /* letters */
+        > div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 62px;
+            height: 62px;
+            background-color: #ffffff;
+            color: #000000;
+            border: 2px solid var(--border);
+            font-size: 32px;
+            user-select: none;
+
+            &:not(:last-child) {
+                margin-right: 5px;
+            }
+
+            &.gray {
+                --color: var(--gray);
+            }
+
+            &.yellow {
+                --color: var(--yellow);
+            }
+
+            &.green {
+                --color: var(--green);
+            }
+
+            &.gray,
+            &.yellow,
+            &.green {
+                animation: submit 500ms 500ms forwards;
+            }
+
+            &#e {
+                animation-delay: 750ms;
+            }
+
+            &#n {
+                animation-delay: 1000ms;
+            }
+
+            &#i {
+                animation-delay: 1250ms;
+            }
+
+            &#s {
+                animation-delay: 1500ms;
+            }
         }
+    }
+
+    /* note */
+    > figcaption {
+        margin-top: 32px;
+        font-size: 24px;
+        opacity: 0;
+        user-select: none;
+        animation: fadeIn 500ms 2250ms forwards;
     }
 }
 
+/* footer */
 footer {
     position: fixed;
     right: 8px;
     bottom: 8px;
+    font-size: 11px;
+    opacity: 0.4;
     user-select: none;
     transition-duration: 250ms;
-
-    &:not(:hover) {
-        opacity: 0.4;
-    }
 
     &:hover {
         opacity: 0.9;
@@ -58,3 +131,38 @@ footer {
         text-decoration: none;
     }
 }
+
+/* animations */
+
+/* submit: wordle tile entry animation */
+@keyframes submit {
+    50% {
+        background-color: #ffffff;
+        color: #000000;
+        border: 2px solid var(--border);
+        transform: scaleY(0);
+    }
+    51% {
+        background-color: var(--color);
+        color: #ffffff;
+        border: 2px solid var(--color);
+    }
+    100% {
+        background-color: var(--color);
+        color: #ffffff;
+        border: 2px solid var(--color);
+        transform: scaleY(1);
+    }
+}
+
+/* fadeIn: dramatic and suspenseful "no" */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* - - - - - - - - - */

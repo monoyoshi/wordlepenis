@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- metadata -->
+    <meta charset="utf-8">
+    <meta name="description" content="checks if today's wordle is penis">
+    <meta name="keywords" content="wordle, funny">
+    <meta name="author" content="kyu(ren)">
+    <meta name="viewport" content="width=device-width, height=device.height, initial-scale=1.0">
+
+    <title>is today's wordle penis | monoyoshi.github.io</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        /* overall structure */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100vh;
+            width: 100vw;
+            font-family: "Libre Franklin", sans-serif;
+            font-size: 16px;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        /* - - - - - - - - - */
+
+        /* article */
+        article {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            background-color: #ffffff;
+            
+            /* wordle mimic */
+            > figure {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                /* letters */
+                > div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 62px;
+                    height: 62px;
+                    background-color: #787c7e;
+                    color: #ffffff;
+                    font-size: 32px;
+                    user-select: none;
+
+                    &:not(:last-child) {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+
+        /* footer */
+        footer {
+            position: fixed;
+            right: 8px;
+            bottom: 8px;
+            font-size: 11px;
+            opacity: 0.4;
+            user-select: none;
+            transition-duration: 250ms;
+
+            &:hover {
+                opacity: 0.9;
+            }
+            
+            > a {
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <figure>
+            <div>N</div>
+            <div>O</div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </figure>
+    </article>
+
+    <footer>
+        <a href="https://bladewyrm.dev" target="_blank" rel="noopener noreferrer" title="my portfolio :)">🐉🗡️💙🩶</a>
+    </footer>
+</body>
+
+</html>
