@@ -1,6 +1,6 @@
 
 const d = Temporal.Now.plainDateISO();
-const url = `https://www.nytimes.com/svc/wordle/v2/${d.year.toString()}-${d.month.toString().padStart(2, "0")}-${d.day.toString().padStart(2, "0")}.json`;
+const url = `https://cors.io/?url=https://www.nytimes.com/svc/wordle/v2/${d.year.toString()}-${d.month.toString().padStart(2, "0")}-${d.day.toString().padStart(2, "0")}.json`;
 const PENIS = "penis"; // penis is forever
 
 let wordle = fetch(url)
