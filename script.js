@@ -4,10 +4,11 @@ const url = `https://cors.io/?url=https://www.nytimes.com/svc/wordle/v2/${d.year
 const PENIS = "penis"; // penis is forever
 
 let wordle = fetch(url)
-    .then(g => g.json())
-    .then(a => {
+    .then(cors => cors.json())
+    .then(answer => JSON.parse(answer.body).solution)
+    .then(attempt => {
         for (let i = 0; i < 5; i++) {
-            const letter = a.solution[i];
+            const letter = attempt[i];
             if (letter == PENIS[i]) {
                 document.getElementById(PENIS[i]).classList.add("green");
             }
