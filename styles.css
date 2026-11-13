@@ -25,7 +25,7 @@
 html, body {
     height: 100vh;
     width: 100vw;
-    font-family: "Libre Franklin", sans-serif;
+    font-family: "Libre Franklin", Arial, sans-serif;
     font-size: 16px;
     font-optical-sizing: auto;
     font-weight: 600;
@@ -85,6 +85,7 @@ article {
                 animation: submit 500ms 500ms forwards;
             }
 
+            /* animation delay */
             &#e {
                 animation-delay: 750ms;
             }
@@ -109,26 +110,48 @@ article {
         font-size: 24px;
         opacity: 0;
         user-select: none;
-        animation: fadeIn 500ms 2250ms forwards;
+        animation: reveal 500ms 2250ms forwards;
     }
 }
 
 /* footer */
 footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
-    right: 8px;
-    bottom: 8px;
+    bottom: 16px;
+    width: 100%;
+    font-family: Helvetica, Arial, sans-serif;
     font-size: 11px;
-    opacity: 0.4;
     user-select: none;
-    transition-duration: 250ms;
 
-    &:hover {
-        opacity: 0.9;
-    }
-    
-    > a {
-        text-decoration: none;
+    > ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style-type: none;
+
+        > li {
+            /* spacing between links */
+            &::after {
+                position: relative;
+                top: 2px;
+                font-size: 16px;
+                content: "";
+            }
+
+            &:not(:last-child)::after {
+                margin: 0 6px;
+                border-right: 2px solid #000000;
+            }
+        
+            /* link */
+            > a {
+                color: #000000;
+                text-decoration: none;
+            }
+        }
     }
 }
 
@@ -155,8 +178,8 @@ footer {
     }
 }
 
-/* fadeIn: dramatic and suspenseful "no" */
-@keyframes fadeIn {
+/* reveal: dramatic and suspenseful "no" */
+@keyframes reveal {
     0% {
         opacity: 0;
     }
