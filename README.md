@@ -1,3 +1,3 @@
 # wordlepenis 🅿️🦵
 
-is today's wordle penis
+checks if today's wordle is penis
