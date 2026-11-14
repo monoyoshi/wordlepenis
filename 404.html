@@ -10,14 +10,90 @@
 
     <title>is today's wordle penis | monoyoshi.github.io</title>
     <link rel="icon" type="image/png" href="favicon.png">
+
+    <style>
+        /* links */
+
+        a {
+            color: #3773b9;
+            text-decoration: none;
+            border-bottom: 2px dotted #3773b9;
+        }
+
+        a:hover:active {
+            color: #eacf48;
+            border-bottom: 2px dotted #eacf48;
+        }
+
+        /* - - - - - - - - - */
+
+        /* overall structure */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100vh;
+            width: 100vw;
+            font-family: "Libre Franklin", Arial, sans-serif;
+            font-size: 16px;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        /* - - - - - - - - - */
+
+        /* article */
+        article {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        /* footer */
+        footer {
+            position: fixed;
+            right: 8px;
+            bottom: 8px;
+            font-size: 11px;
+            opacity: 0.4;
+            user-select: none;
+            transition-duration: 250ms;
+
+            &:hover {
+                opacity: 0.9;
+            }
+            
+            > a {
+                text-decoration: none;
+            }
+        }
+    </style>
     
     <script>
         window.location.replace("https://monoyoshi.github.io/wordlepenis/");
     </script>
+    <noscript>your browser does not support javascript :(</noscript>
 </head>
 
 <body>
-    <p><i>"...and where do <b>you</b> think you're going?"</i></p>
+    <article>
+        <p style="margin-bottom: 16px;"><i>...and where do <b>you</b> think you're going?</i></p>
+        <p><a href="https://monoyoshi.github.io/wordlepenis" title="wordlepenis">return to the main page</a></p>
+    </article>
+
+    <footer>
+        <a href="https://bladewyrm.dev" target="_blank" rel="noopener noreferrer" title="my portfolio :)">🐉🗡️💙🩶</a>
+    </footer>
 </body>
 
 </html>
