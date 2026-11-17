@@ -1,25 +1,29 @@
 /* color variables */
 
 :root {
+    /* #mycolors */
     --kyublue: #3773b9;
     --kyuyellow: #eacf48;
 
+    /* general */
     --black: #000000;
     --white: #ffffff;
 
+    /* wordle */
     --border: #878a8c;
     --gray: #787c7e;
     --yellow: #c9b458;
     --green: #6aaa64;
-
     --dark: #121213;
 }
 
+/* color of text in square before submission */
 @property --none {
     syntax: "--white | --black";
     inherits: false;
 }
 
+/* color of square with answer */
 @property --color {
     syntax: "--gray | --yellow | --green";
     inherits: false;
@@ -62,7 +66,10 @@ a:hover:active {
 
 /* - - - - - - - - - */
 
-noscript {
+/* body */
+
+/* noscript notice */
+.noscript {
     position: fixed;
     top: 8px;
     left: 8px;
@@ -146,12 +153,6 @@ article {
         opacity: 0;
         user-select: none;
         animation: reveal 500ms 2250ms forwards;
-
-        > div.bug {
-            position: fixed;
-            top: 14px;
-            font-size: 14px;
-        }
     }
 }
 
@@ -196,11 +197,13 @@ footer {
 
             > a:hover:active {
                 color: var(--black);
-                border-bottom: none;
+                border: none;
             }
         }
     }
 }
+
+/* - - - - - - - - - */
 
 /* animations */
 
@@ -225,9 +228,6 @@ footer {
 
 /* reveal: dramatic and suspenseful no (or yes) */
 @keyframes reveal {
-    0% {
-        opacity: 0;
-    }
     100% {
         opacity: 1;
     }
@@ -237,13 +237,17 @@ footer {
 
 /* dark mode */
 @media (prefers-color-scheme: dark) {
+    /* noscript notice */
+    noscript {
+        color: var(--white);
+    }
+
     /* article */
     article {
         background-color: var(--dark);
 
         /* wordle mimic letters */
         > figure > div {
-            background-color: transparent;
             color: var(--white);
         }
     }
@@ -256,6 +260,10 @@ footer {
 
         /* footer links */
         > a {
+            color: var(--white);
+        }
+
+        > a:hover:active {
             color: var(--white);
         }
     }
