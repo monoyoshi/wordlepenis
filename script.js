@@ -13,23 +13,22 @@ async function penisCompare(wordletoday, l) {
     else document.getElementById(lpenis).classList.add("gray"); // gray (letter not in word)
 }
 
-let wordle = fetch(url)
+const page = fetch(url)
     .then(cors => cors.json()) // bypass cors
     .then(data => {
         const s = JSON.parse(data.body); // actually get the data
-        return s.solution.toLowerCase(); // lowercase for ease of access (just in case)
+        return s.solution.toLowerCase(); // lowercase just in case
     }) // get and parse solution
-    // interpret solution
-    .then(attempt => {
+
+    .then(attempt => { // interpret solution
         penisCompare(attempt, 0) // compare "p"
-            .then(() => penisCompare(attempt, 1)) // compare "e"
-            .then(() => penisCompare(attempt, 2)) // compare "n"
-            .then(() => penisCompare(attempt, 3)) // compare "i"
-            .then(() => penisCompare(attempt, 4)) // compare "s"
-            .then(() => {
-                if (attempt === PENIS) document.getElementById("comment").innerHTML = "yes :)"; // a dragon can dream...
-                else document.getElementById("comment").innerHTML = "no :("; // basically remove the failsafe text
-            })
+        penisCompare(attempt, 1) // compare "e"
+        penisCompare(attempt, 2) // compare "n"
+        penisCompare(attempt, 3) // compare "i"
+        penisCompare(attempt, 4) // compare "s"
+
+        if (attempt === PENIS) document.getElementById("comment").innerHTML = "yes :)"; // a dragon can dream...
+        else document.getElementById("comment").innerHTML = "no :("; // basically remove the failsafe text
     })
     .catch(e => {
         console.error(e);
